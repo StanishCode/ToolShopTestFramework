@@ -1,0 +1,42 @@
+[
+  {
+    "firstName": "John",
+    "lastName": "Doe",
+    "role": "admin",
+    "email": "admin@practicesoftwaretesting.com",
+    "password": "welcome01",
+    "validity": "valid"
+  },
+  {
+    "firstName": "Jane",
+    "lastName": "Doe",
+    "role": "user",
+    "email": "customer@practicesoftwaretesting.com",
+    "password": "welcome01",
+    "validity": "valid"
+  },
+  {
+    "firstName": "Jack",
+    "lastName": "Howe",
+    "role": "user",
+    "email": "customer2@practicesoftwaretesting.com",
+    "password": "welcome01",
+    "validity": "valid"
+  },
+  {
+    "firstName": "Bob",
+    "lastName": "Smith",
+    "role": "user",
+    "email": "customer3@practicesoftwaretesting.com",
+    "password": "pass123",
+    "validity": "valid"
+  },
+  {
+    "firstName": "Fake",
+    "lastName": "Pearson",
+    "role": "user",
+    "email": "customer4@practicesoftwaretesting.com",
+    "password": "pass123",
+    "validity": "invalid"
+  }
+]

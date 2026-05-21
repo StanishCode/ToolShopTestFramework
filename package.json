@@ -1,0 +1,20 @@
+{
+  "name": "toolshop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@playwright/test": "^1.59.1",
+    "@types/node": "^25.8.0"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^10.4.0",
+    "fs": "^0.0.1-security",
+    "install": "^0.13.0"
+  }
+}

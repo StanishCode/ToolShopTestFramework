@@ -43,6 +43,22 @@ export class ProductPage {
     return this.productName;
   }
 
+  getProductPrice() {
+    return this.unitPrice;
+  }
+
+  getProductDescription() {
+    return this.productDescription;
+  }
+
+  getProductImg() {
+    return this.productImg;
+  }
+
+  getAddToCartButton() {
+    return this.page.locator("button[data-test='add-to-cart']");
+  }
+
   async getProductInfo() {
     const name = await this.productName.textContent();
     const price = await this.unitPrice.textContent();
@@ -54,8 +70,8 @@ export class ProductPage {
     return { name, price, description, quantity, img, co2Rating };
   }
 
-  async isProductOutOfStock() {
-    return await this.outOfStockMsg.isVisible();
+  getOutOfStockMsg() {
+    return this.outOfStockMsg;
   }
 
   async isCartBtnEnabled() {
@@ -68,5 +84,9 @@ export class ProductPage {
 
   getBanner() {
     return this.page.locator(".toast-message");
+  }
+
+  getCartBadge() {
+    return this.page.locator("span[data-test='cart-quantity']");
   }
 }

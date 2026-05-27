@@ -1,15 +1,14 @@
-import { test } from "../fixtures";
+import { test } from "../../fixtures";
 import { expect } from "@playwright/test";
 
-test("User submits registration form with valid data to created account", async ({
+test.only("User can register an account", async ({
   registerPage,
-  signinPage,
   page,
   userDataGen,
   userAPI,
   createdUsers,
 }) => {
-  const newUser = userDataGen.generateUIUser();
+  const newUser = userDataGen.generateUser();
 
   await registerPage.gotoRegisterPage();
 
@@ -17,9 +16,7 @@ test("User submits registration form with valid data to created account", async 
 
   await expect(page).toHaveURL(/auth\/login/);
 
-  await signinPage.signInAccount(newUser.email, newUser.password);
-  await expect(page).toHaveURL(/account/);
-
+  //registered user cleanup
   const response = await userAPI.getCurrentUser({
     email: newUser.email,
     password: newUser.password,

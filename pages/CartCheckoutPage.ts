@@ -16,7 +16,6 @@ export class CartCheckoutPage {
   readonly guestFirstNameIput: Locator;
   readonly guestLastNameInput: Locator;
   readonly continueGuestBtn: Locator;
-  readonly loginConfirmation: Locator;
   readonly secondProceed: Locator;
   readonly countryDropdown: Locator;
   readonly postalCodeInput: Locator;
@@ -54,7 +53,6 @@ export class CartCheckoutPage {
     this.guestFirstNameIput = this.page.locator("");
     this.guestLastNameInput = this.page.locator("");
     this.continueGuestBtn = this.page.locator("");
-    this.loginConfirmation = this.page.locator("p.ng-star-inserted");
     this.secondProceed = this.page.locator("button[data-test='proceed-2']");
     this.countryDropdown = this.page.locator("select[data-test='country']");
     this.postalCodeInput = this.page.locator("input[data-test='postal_code']");
@@ -168,6 +166,10 @@ export class CartCheckoutPage {
     await this.continueShoppingBtn.click();
   }
 
+  getCheckoutBtn() {
+    return this.checkoutBtn;
+  }
+
   async clickCheckoutBtn() {
     await this.checkoutBtn.click();
   }
@@ -185,11 +187,11 @@ export class CartCheckoutPage {
     await this.continueGuestBtn.click();
   }
 
-  async getLoginConfirmationMsg() {
-    return await this.loginConfirmation.textContent();
+  getLoginConfirmationMsg() {
+    return this.page.locator('p:has-text("Hello")');
   }
 
-  async clickSignInContinue() {
+  async clickSignInContinueBtn() {
     await this.secondProceed.click();
   }
 

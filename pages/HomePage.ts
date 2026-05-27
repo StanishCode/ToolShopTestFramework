@@ -33,11 +33,14 @@ export class HomePage {
     await this.page.locator("a[data-test='nav-cart']").click();
   }
 
-  async getAllProductsInfo() {
-    const products = await this.page
-      .locator("a[data-test^='product-']")
+  getAllProducts() {
+    return this.page.locator("a[data-test^='product-']");
+  }
+
+  async getAllProductNames() {
+    return await this.getAllProducts()
+      .locator("h5[data-test='product-name']")
       .allTextContents();
-    return products;
   }
 
   async getFirstProductInfo() {
@@ -97,6 +100,10 @@ export class HomePage {
   async searchProduct(keyword: string) {
     await this.searchBar.fill(keyword);
     await this.searchBtn.click();
+  }
+
+  getSearchCaption() {
+    return this.page.locator("h3[data-test='search-caption']");
   }
 
   getSearchCount() {

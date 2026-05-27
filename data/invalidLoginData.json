@@ -1,0 +1,17 @@
+[
+  {
+    "email": "cutomer@practicesoftwaretesting.com",
+    "password": "welcome01",
+    "name": "Jane Doe"
+  },
+  {
+    "email": "customer2@practicesoftwaretesting.com",
+    "password": "welcome",
+    "name": "Jack Howe"
+  },
+  {
+    "email": "cutomer3@practicesoftwaretesting.com",
+    "password": "pass12",
+    "name": "Bob Smith"
+  }
+]

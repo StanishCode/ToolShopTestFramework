@@ -46,7 +46,7 @@ export class RegisterPage {
     await this.page.goto("/auth/register", { waitUntil: "domcontentloaded" });
   }
 
-  async submitRegistrationForm(customerData: UIUser) {
+  async submitRegistrationForm(customerData: any) {
     await this.firstNameInput.fill(customerData.first_name);
     await this.lastNameInput.fill(customerData.last_name);
     await this.dobInput.fill(customerData.dob);

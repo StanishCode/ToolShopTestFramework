@@ -8,9 +8,9 @@ import { SignInPage } from "./pages/SignInPage";
 import { HomePage } from "./pages/HomePage";
 import { ProductPage } from "./pages/ProductPage";
 import { CartCheckoutPage } from "./pages/CartCheckoutPage";
-import { UserAPI } from "./api/user.api";
-import { ProductAPI } from "./api/product.api";
-import { CartAPI } from "./api/cart.api";
+import { UserAPI } from "./api/clients/user.api";
+import { ProductAPI } from "./api/clients/product.api";
+import { CartAPI } from "./api/clients/cart.api";
 import { UserDataGenerator } from "./utils/user-data-generator";
 import { APIUser, UIUser } from "./types";
 
@@ -111,3 +111,5 @@ export const test = base.extend<TestFixtures, WorkerFixtures>({
     { scope: "worker" },
   ],
 });
+
+export { expect } from "@playwright/test";

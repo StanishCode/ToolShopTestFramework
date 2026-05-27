@@ -3,7 +3,7 @@ import { expect } from "@playwright/test";
 import { loginUI } from "../utils/login-ui";
 import { setCart } from "../utils/set-cart";
 
-test("critical journey for new user purchase flow", async ({
+test("user can checkout their cart", async ({
   userAPI,
   productAPI,
   cartAPI,

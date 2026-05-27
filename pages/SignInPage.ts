@@ -19,6 +19,10 @@ export class SignInPage {
     );
   }
 
+  async goToSignInPage() {
+    await this.page.goto("/auth/login");
+  }
+
   async signInAccount(email: string, password: string) {
     await this.emailInput.fill(email);
     await this.passwordInput.fill(password);

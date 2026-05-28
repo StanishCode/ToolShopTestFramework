@@ -22,10 +22,11 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Debug Playwright Install
-        run: |
-          npx playwright --version
-          DEBUG=pw:install npx playwright install chromium
+      - name: Clear Playwright cache
+        run: rm -rf ~/.cache/ms-playwright
+
+      - name: Install Playwright Browsers
+        run: npx playwright install chromium
 
       - name: Run Playwright tests
         run: npx playwright test

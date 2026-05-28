@@ -1,6 +1,7 @@
 import { Page, Locator } from "@playwright/test";
 
 export class SignInPage {
+  readonly signupHeader: Locator;
   readonly emailInput: Locator;
   readonly passwordInput: Locator;
   readonly passwordReveal: Locator;
@@ -9,6 +10,7 @@ export class SignInPage {
   readonly forgotPasswordLink: Locator;
 
   constructor(private page: Page) {
+    this.signupHeader = this.page.getByRole("heading", { name: "Login" });
     this.emailInput = this.page.locator("#email");
     this.passwordInput = this.page.locator("#password");
     this.passwordReveal = this.page.locator("div.input-group-append");
@@ -22,6 +24,13 @@ export class SignInPage {
   async goToSignInPage() {
     await this.page.goto("/auth/login");
   }
+  async goToRegistrationPage() {
+    await this.registerLink.click();
+  }
+
+  async goToForgotPasswordPage() {
+    await this.forgotPasswordLink.click();
+  }
 
   async signInAccount(email: string, password: string) {
     await this.emailInput.fill(email);
@@ -29,12 +38,8 @@ export class SignInPage {
     await this.loginBtn.click();
   }
 
-  async goToRegistrationPage() {
-    await this.registerLink.click();
-  }
-
-  async goToForgotPasswordPage() {
-    await this.forgotPasswordLink.click();
+  getSignupHeading() {
+    return this.signupHeader;
   }
 
   getErrorMsg() {

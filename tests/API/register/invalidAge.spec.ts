@@ -1,6 +1,6 @@
 import { test, expect } from "../../../fixtures";
 
-test.only("cannot register if younger than 18", async ({
+test("cannot register if younger than 18", async ({
   userAPI,
   userDataGen,
   createdUsers,

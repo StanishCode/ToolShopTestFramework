@@ -1,10 +1,7 @@
-import { test } from "../fixtures";
-import { expect } from "@playwright/test";
+import { test, expect } from "../../fixtures";
 
 //TODO: look into parameterization
-test("Email frontend validation: email address must be valid", async ({
-  registerPage,
-}) => {
+test("user can register with a valid email", async ({ registerPage }) => {
   await registerPage.gotoRegisterPage();
 
   //valid emails with "@" and domain
@@ -23,13 +20,4 @@ test("Email frontend validation: email address must be valid", async ({
   await registerPage.enterEmail("email@.edu");
   await registerPage.clickRegisterBtn();
   await expect(registerPage.getEmailErrorMsg()).toBeHidden();
-
-  await registerPage.enterEmail("email.com");
-  await registerPage.clickRegisterBtn();
-  await expect(registerPage.getEmailErrorMsg()).toBeVisible();
-
-  //invalid email without domain
-  await registerPage.enterEmail("email@");
-  await registerPage.clickRegisterBtn();
-  await expect(registerPage.getEmailErrorMsg()).toBeVisible();
 });

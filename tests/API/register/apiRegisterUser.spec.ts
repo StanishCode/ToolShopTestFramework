@@ -1,6 +1,6 @@
 import { test, expect } from "../../../fixtures";
 
-test.only("api register user successfully", async ({
+test("api register user successfully", async ({
   userAPI,
   userDataGen,
   createdUsers,

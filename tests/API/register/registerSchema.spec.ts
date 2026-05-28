@@ -4,7 +4,7 @@ import { userSchema } from "../../../api/schemas/user.schema";
 
 const ajv = new Ajv();
 
-test.only("register response matches schema", async ({
+test("register response matches schema", async ({
   userAPI,
   userDataGen,
   createdUsers,

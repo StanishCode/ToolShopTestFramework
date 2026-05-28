@@ -1,7 +1,6 @@
-import { test } from "../../fixtures";
-import { expect } from "@playwright/test";
+import { test, expect } from "../../fixtures";
 
-test.only("User can add available product to cart", async ({
+test("User can add available product to cart", async ({
   productAPI,
   productPage,
   cartCheckoutPage,

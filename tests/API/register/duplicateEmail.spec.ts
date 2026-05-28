@@ -1,6 +1,6 @@
 import { test, expect } from "../../../fixtures";
 
-test.only("cannot register with a duplicate email", async ({
+test("cannot register with a duplicate email", async ({
   userAPI,
   userDataGen,
   createdUsers,

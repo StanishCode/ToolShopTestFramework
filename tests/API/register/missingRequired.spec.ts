@@ -1,6 +1,6 @@
 import { test, expect } from "../../../fixtures";
 
-test.only("cannot register when missing required fields", async ({
+test("cannot register when missing required fields", async ({
   userAPI,
   userDataGen,
   createdUsers,

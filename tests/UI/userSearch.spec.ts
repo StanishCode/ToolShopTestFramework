@@ -1,10 +1,6 @@
-import { test } from "../../fixtures";
-import { expect } from "@playwright/test";
+import { test, expect } from "../../fixtures";
 
-test.only("keyword search returns matching products", async ({
-  homePage,
-  page,
-}) => {
+test("keyword search returns matching products", async ({ homePage, page }) => {
   const keyword = "hammer";
 
   //go to homepage

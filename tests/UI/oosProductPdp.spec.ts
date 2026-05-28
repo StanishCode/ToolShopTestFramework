@@ -1,7 +1,7 @@
 import { test, expect } from "../../fixtures";
 import { oosProduct } from "../../utils/mocks/oosProduct";
 
-test.only("user cannot add out of stock product to cart", async ({
+test("user cannot add out of stock product to cart", async ({
   productAPI,
   productPage,
   page,

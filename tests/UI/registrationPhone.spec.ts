@@ -1,8 +1,7 @@
-import { test } from "../fixtures";
-import { expect } from "@playwright/test";
+import { test, expect } from "../../fixtures";
 
 //TODO: look into parameterization
-test("Phone frontend validation: only numbers are allowed", async ({
+test("user can only register with valid phone number", async ({
   registerPage,
 }) => {
   await registerPage.gotoRegisterPage();
@@ -10,10 +9,10 @@ test("Phone frontend validation: only numbers are allowed", async ({
   //valid phone number using numbers
   await registerPage.enterPhoneNum("1234567890");
   await registerPage.clickRegisterBtn();
-  expect(registerPage.getPhoneErrorMsg()).toBeHidden();
+  await expect(registerPage.getPhoneErrorMsg()).toBeHidden();
 
   //invalid phone number using letters
   await registerPage.enterPhoneNum("abcdefghij");
   await registerPage.clickRegisterBtn();
-  expect(registerPage.getPhoneErrorMsg()).toBeVisible();
+  await expect(registerPage.getPhoneErrorMsg()).toBeVisible();
 });

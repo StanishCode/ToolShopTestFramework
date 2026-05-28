@@ -1,7 +1,7 @@
 import { test, expect } from "../../fixtures";
 import { oosHomeProduct } from "../../utils/mocks/oosHomeProduct";
 
-test.only("unavailable products display out of stock message", async ({
+test("unavailable products display out of stock message", async ({
   homePage,
   page,
 }) => {

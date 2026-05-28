@@ -1,6 +1,6 @@
 import { test, expect } from "../../../fixtures";
 
-test.only("password must include uppercase, lowercase, number, and symbol to register", async ({
+test("password must include uppercase, lowercase, number, and symbol to register", async ({
   userAPI,
   userDataGen,
   createdUsers,

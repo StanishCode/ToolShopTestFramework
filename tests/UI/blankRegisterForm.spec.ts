@@ -1,9 +1,6 @@
-import { test } from "../fixtures";
-import { expect } from "@playwright/test";
+import { test, expect } from "../../fixtures";
 
-test("User submits registration form with valid data", async ({
-  registerPage,
-}) => {
+test("user cannot submit an empty form", async ({ registerPage }) => {
   await registerPage.gotoRegisterPage();
 
   //Submit form without entering any data

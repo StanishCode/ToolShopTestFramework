@@ -1,6 +1,6 @@
 import { test, expect } from "../../../fixtures";
 
-test.only("cannot register with a first name longer than 40 characters", async ({
+test("cannot register with a first name longer than 40 characters", async ({
   userAPI,
   userDataGen,
 }) => {

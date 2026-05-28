@@ -1,5 +1,4 @@
-import { test } from "../fixtures";
-import { expect } from "@playwright/test";
+import { test, expect } from "../../fixtures";
 
 test("User search with no results displays no results message", async ({
   homePage,
@@ -34,10 +33,18 @@ test("User search with no results displays no results message", async ({
   });
 
   await homePage.goToHomePage();
+  await expect(homePage.getFirstProduct()).toBeVisible();
+  const defaultProducts = await homePage.getAllProductNames();
 
   await homePage.searchProduct(keyword);
 
-  await expect(homePage.getNoResultsMsg()).toBeVisible();
+  // await expect(homePage.getNoResultsMsg()).toBeVisible();
+  await expect(homePage.getSearchCaption()).toContainText(keyword);
+  await expect
+    .poll(async () => {
+      return await homePage.getAllProductNames();
+    })
+    .not.toEqual(defaultProducts);
   await expect(homePage.getNoResultsMsg()).toHaveText(
     "There are no products found.",
   );

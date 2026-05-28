@@ -1,7 +1,6 @@
-import { test } from "../../fixtures";
-import { expect } from "@playwright/test";
+import { test, expect } from "../../fixtures";
 
-test.only("Product page displays critical product information", async ({
+test("Product page displays critical product information", async ({
   productPage,
   productAPI,
 }) => {

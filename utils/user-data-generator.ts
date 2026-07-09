@@ -1,11 +1,12 @@
 import { faker } from "@faker-js/faker";
-import { APIUser, UIUser } from "../types";
+import { User } from "../types";
+import { generatePassword } from "./user-password-generator";
 
 export class UserDataGenerator {
   //TODO: create initialization logic and look into adding payment info
   //      or create a payment info generator, update User type
 
-  generateUser(minAge: number = 18, maxAge: number = 75) {
+  generateUser(minAge: number = 18, maxAge: number = 75): User {
     return {
       "first_name": faker.person.firstName(),
       "last_name": faker.person.lastName(),
@@ -22,7 +23,7 @@ export class UserDataGenerator {
         .birthdate({ min: minAge, max: maxAge, mode: "age" })
         .toISOString()
         .split("T")[0],
-      "password": "SuperSecure@123",
+      "password": generatePassword(),
       "email": faker.internet.email().toLowerCase(),
     };
   }

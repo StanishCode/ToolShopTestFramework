@@ -8,6 +8,7 @@ export class HomePage {
   readonly brandCheckboxes: Locator;
   readonly sustainabilityCheckbox: Locator;
   readonly userNav: Locator;
+  readonly signOut: Locator;
 
   constructor(private page: Page) {
     this.signinBtn = this.page.locator("a[data-test='nav-sign-in']");
@@ -19,6 +20,7 @@ export class HomePage {
       "input[data-test='eco-friendly-filter']",
     );
     this.userNav = this.page.locator("button[data-test='nav-menu']");
+    this.signOut = this.page.locator("a[data-test='nav-sign-out']");
   }
 
   async goToHomePage() {
@@ -95,6 +97,14 @@ export class HomePage {
 
   getAccountTab() {
     return this.userNav;
+  }
+
+  async clickAccountTab() {
+    await this.userNav.click();
+  }
+
+  async clickSignOut() {
+    await this.signOut.click();
   }
 
   async searchProduct(keyword: string) {

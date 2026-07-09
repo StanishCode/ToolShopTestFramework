@@ -11,7 +11,7 @@ export async function oosHomeProduct(page: Page) {
       const newBody = body;
       newBody.data = [firstProduct];
 
-      await route.fulfill({ response, body: JSON.stringify(body) });
+      await route.fulfill({ response, body: JSON.stringify(newBody) });
     },
   );
 }

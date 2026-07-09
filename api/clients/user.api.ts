@@ -67,10 +67,23 @@ export class UserAPI {
     );
   }
 
-  async deleteUser(id: string) {
-    await this.loginAdmin();
+  async deleteUser(id: string, isAdmin = true, email = "", password = "") {
+    let access_token = "";
+    if (isAdmin) {
+      const response = await this.loginAdmin();
+      const body = await response.json();
+      access_token = body.access_token;
+    } else {
+      const response = await this.loginUser({ email, password });
+      access_token = response.access_token;
+    }
     return this.request.delete(
       `https://api.practicesoftwaretesting.com/users/${id}`,
+      {
+        headers: {
+          Authorization: `Bearer ${access_token}`,
+        },
+      },
     );
   }
 }

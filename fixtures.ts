@@ -12,7 +12,7 @@ import { UserAPI } from "./api/clients/user.api";
 import { ProductAPI } from "./api/clients/product.api";
 import { CartAPI } from "./api/clients/cart.api";
 import { UserDataGenerator } from "./utils/user-data-generator";
-import { APIUser, UIUser } from "./types";
+//import { User } from "./types";
 
 //TODO: look into optional data fixtures for users and products
 type TestFixtures = {
@@ -93,11 +93,6 @@ export const test = base.extend<TestFixtures, WorkerFixtures>({
         console.error(error);
       } finally {
         await apiContext.dispose();
-      }
-
-      try {
-      } catch (error) {
-        console.error(error);
       }
     }
   },

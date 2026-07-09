@@ -1,5 +1,6 @@
 export const userSchema = {
   type: "object",
+  additionalProperties: false,
   properties: {
     first_name: { type: "string" },
     last_name: { type: "string" },
@@ -10,6 +11,7 @@ export const userSchema = {
     created_at: { type: "string" },
     address: {
       type: "object",
+      additonalProperties: false,
       properties: {
         street: { type: "string" },
         house_number: { type: "null" },
@@ -18,6 +20,17 @@ export const userSchema = {
         country: { type: "string" },
         postal_code: { type: "string" },
       },
+      required: ["street", "city", "state", "country", "postal_code"],
     },
   },
+  required: [
+    "first_name",
+    "last_name",
+    "phone",
+    "dob",
+    "email",
+    "id",
+    "created_at",
+    "address",
+  ],
 };

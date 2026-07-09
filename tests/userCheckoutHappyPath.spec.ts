@@ -1,3 +1,5 @@
+//TODO: Need to refactor test case to be CI compatible
+
 // import { test, expect } from "../fixtures";
 // import { loginUI } from "../utils/login-ui";
 // import { setCart } from "../utils/set-cart";
